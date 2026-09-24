@@ -1,0 +1,106 @@
+{
+  "info": {
+    "name": "Student Management API",
+    "description": "REST API for Student Management with CRUD operations",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET All Students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/students",
+          "host": ["{{base_url}}"],
+          "path": ["students"]
+        },
+        "description": "Retrieve all students from the database"
+      },
+      "response": []
+    },
+    {
+      "name": "GET Student by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/students/1",
+          "host": ["{{base_url}}"],
+          "path": ["students", "1"]
+        },
+        "description": "Retrieve a specific student by their ID"
+      },
+      "response": []
+    },
+    {
+      "name": "CREATE New Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Vikas Kumar\",\n  \"course\": \"BCA\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/students",
+          "host": ["{{base_url}}"],
+          "path": ["students"]
+        },
+        "description": "Create a new student record"
+      },
+      "response": []
+    },
+    {
+      "name": "UPDATE Student",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Priya Sharma\",\n  \"course\": \"BTech\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/students/2",
+          "host": ["{{base_url}}"],
+          "path": ["students", "2"]
+        },
+        "description": "Update an existing student's information"
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE Student",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/students/3",
+          "host": ["{{base_url}}"],
+          "path": ["students", "3"]
+        },
+        "description": "Delete a student by their ID"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
